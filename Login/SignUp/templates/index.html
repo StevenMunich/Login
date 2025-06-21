@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #333; color: #fff; padding: 1em 2em; position: relative; }
+        nav a { color: #fff; margin: 0 1em; text-decoration: none; }
+        .user-nav {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+        .user-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+        .user-nav li {
+            display: inline;
+        }
+        .user-nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            padding: 6px 12px;
+            border-radius: 4px;
+            background: #007bff;
+            transition: background 0.2s;
+        }
+        .user-nav a:hover {
+            background: #0056b3;
+        }
+        .hero { background: #f4f4f4; padding: 2em; text-align: center; }
+        .section { padding: 2em; }
+        .products { display: flex; gap: 2em; justify-content: center; flex-wrap: wrap; }
+        .product { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 1em; width: 200px; text-align: center; }
+        .product img { width: 100%; border-radius: 4px; }
+        footer { background: #333; color: #fff; text-align: center; padding: 1em 0; margin-top: 2em; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Store</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Shop/Menu</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+        <div class="user-nav">
+    <ul>
+        {% if username %}
+            <li>Welcome, {{ username }}!</li>
+         {# If the user is logged in, display their username and provide links to account actions   <li><a href="{{ url_for('logout') }}">Logout</a></li><li><a href="{{ url_for('get_data') }}">View Messages</a></li><li><a href="{{ url_for('update_profile') }}">Update Profile</a></li><li><a href="{{ url_for('view_cart') }}">View Cart</a></li><li><a href="{{ url_for('checkout') }}">Checkout</a></li> <li><a href="{{ url_for('view_orders') }}">View Orders</a></li>  #}
+
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        {% else %}
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        {% endif %}
+    </ul>
+</div>
+    </header>
+    <div class="hero">
+        <h2>Welcome to My Store!</h2>
+        <p>Your one-stop shop for quality products / delicious food.</p>
+        <a href="#" style="background:#007bff;color:#fff;padding:0.5em 1em;border-radius:4px;text-decoration:none;">Shop Now</a>
+    </div>
+    <div class="section">
+        <h2>Featured Items</h2>
+        <div class="products">
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Product 1">
+                <h3>Product/Menu Item 1</h3>
+                <p>$19.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Product 2">
+                <h3>Product/Menu Item 2</h3>
+                <p>$14.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://via.placeholder.com/200" alt="Product 3">
+                <h3>Product/Menu Item 3</h3>
+                <p>$9.99</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 My Store. All rights reserved.
+    </footer>
+</body>
+</html>

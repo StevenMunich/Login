@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Account</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Delete Account</h2>
+    <form id="deleteForm">
+        <input name="username" placeholder="Username" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button type="submit">Delete Account</button>
+    </form>
+    <script>
+    document.getElementById('deleteForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        const response = await fetch('/delete_account', {
+            method: 'POST',
+            body: formData
+        });
+        const data = await response.json();
+        alert(data.message);
+    };
+    </script>
+</body>
+</html>

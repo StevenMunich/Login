@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sign Up</title></head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+  <h2>Sign Up</h2>
+  <form id="signupForm" method="post">
+    Username: <input name="username" type="text" required><br>
+    Password: <input name="password" type="password" required><br>
+    <button type="submit">Sign Up</button><!-- The button submits the form data to the server for processing.  No JS needed-->
+  </form>
+  <script>
+document.getElementById('signupForm').onsubmit = async function(e) {
+  e.preventDefault();
+  const formData = new FormData(this);
+  const response = await fetch('/signup', {
+    method: 'POST',
+    body: formData
+  });
+  const data = await response.json();
+  alert(data.message || Object.keys(data)[0]); // Show alert with the message
+};
+</script>
+  <a href="{{ url_for('login') }}">Already have an account? Log in</a>
+  <!-- url_for function inside a Jinja2 template ----to generate the correct URL for the login route. In English, connects the html to pyFile login route. Links work even if the route changes -->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>{% for msg in messages %}<li>{{ msg }}</li>{% endfor %}</ul>
+    {% endif %}
+  {% endwith %}
+</body>
+</html>
