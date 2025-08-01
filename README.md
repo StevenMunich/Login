@@ -3,4 +3,4 @@ Sign up
 Login
 Logout
 Delete
-[https://github.com/StevenMunich/Login/blob/master/Diagrams/myStoreSQL.jpg?raw=true]
+![myStoreSQL](https://github.com/user-attachments/assets/3ab3ec01-b4d7-42e0-9d43-42aabe7272b8)
