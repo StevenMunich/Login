@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome - Home</title>
+</head>
+<body>
+    <h1>Welcome to the Homepage</h1>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('login') }}">Login</a></li>
+            <li><a href="{{ url_for('signup') }}">Sign Up</a></li>
+            <li><a href="{{ url_for('get_data') }}">View Messages</a></li>
+            <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
+        </ul>
+    </nav>
+    <p>This is the main landing page for your application.</p>
+</body>
+</html>

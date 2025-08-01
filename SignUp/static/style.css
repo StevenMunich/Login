@@ -1,0 +1,152 @@
+body {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #222;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1em 2em;
+    position: relative;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 1em;
+    text-decoration: none;
+}
+
+.user-nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.user-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+.user-nav li {
+    display: inline;
+}
+
+.user-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 4px;
+    background: #007bff;
+    transition: background 0.2s;
+}
+
+.user-nav a:hover {
+    background: #0056b3;
+}
+
+button,
+input[type="submit"],
+input[type="button"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 4px;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background: #0056b3;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    padding: 0.5em 1em;
+    font-size: 1em;
+    margin-bottom: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #0056b3;
+    outline: none;
+    box-shadow: 0 0 0 2px #cce0ff;
+}
+
+label {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+form {
+    max-width: 400px;
+    margin: 2em auto;
+    background: #fff;
+    padding: 2em;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+
+.hero {
+    background: #f4f4f4;
+    padding: 2em;
+    text-align: center;
+}
+
+.section {
+    padding: 2em;
+}
+
+.products {
+    display: flex;
+    gap: 2em;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.product {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    width: 200px;
+    text-align: center;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 4px;
+}
+
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: 2em;
+}

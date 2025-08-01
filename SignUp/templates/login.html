@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head><title>Log In</title></head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+  <h2>Log In</h2>
+  <form id="loginForm" method="post">
+    Username: <input name="username" type="text" required><br>
+    Password: <input name="password" type="password" required><br>
+    <button type="submit">Log In</button> <!-- The button submits the form data to the server for processing. No JS needed -->
+  </form>
+      <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    const data = new URLSearchParams(formData);
+    const response = await fetch('/login', {
+        method: 'POST',
+        body: data
+    });
+    const result = await response.json();
+    if (result.redirect) {
+        window.location.href = result.redirect;
+    } else if (result.message) {
+        alert(result.message);
+    } else {
+        alert("Unexpected response: " + JSON.stringify(result));
+    }
+});
+
+    </script>
+<!--get_flashed_messages() retrieves all flashed messages.
+If there are messages, it loops through them and displays each inside a-->
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul>{% for msg in messages %}<li>{{ msg }}</li>{% endfor %}</ul>
+    {% endif %}
+  {% endwith %}
+
+
+  <!-- This is the singup Link-->
+  <a href="{{ url_for('signup') }}">Don't have an account? Sign up</a>
+</body>
+</html>
