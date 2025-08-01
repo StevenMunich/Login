@@ -54,6 +54,8 @@ def signup():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        validate_input(username)
+        validate_input(password)
         hashed_password = generate_password_hash(password)
         try:
             with sqlite3.connect("../data.db") as conn:
@@ -75,6 +77,8 @@ def delete_account():
     if request.method == "POST": #Submission of form
         username = request.form["username"]
         password = request.form["password"]
+        validate_input(username)
+        validate_input(password)
         try: # Check if the username and password are correct
             with sqlite3.connect("../data.db") as conn:
                 cursor = conn.cursor()
@@ -100,6 +104,8 @@ def login():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+        validate_input(username)
+        validate_input(password)
         try:
             with sqlite3.connect("../data.db") as conn:
                 cursor = conn.cursor()
