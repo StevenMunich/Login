@@ -56,8 +56,9 @@
     <ul>
         {% if username %}
             <li>Welcome, {{ username }}!</li>
-         {# If the user is logged in, display their username and provide links to account actions   <li><a href="{{ url_for('logout') }}">Logout</a></li><li><a href="{{ url_for('get_data') }}">View Messages</a></li><li><a href="{{ url_for('update_profile') }}">Update Profile</a></li><li><a href="{{ url_for('view_cart') }}">View Cart</a></li><li><a href="{{ url_for('checkout') }}">Checkout</a></li> <li><a href="{{ url_for('view_orders') }}">View Orders</a></li>  #}
+         {# If the user is logged in, display their username and provide links to account actions   <li><a href="{{ url_for('get_data') }}">View Messages</a></li><li><a href="{{ url_for('update_profile') }}">Update Profile</a></li><li><a href="{{ url_for('view_cart') }}">View Cart</a></li><li><a href="{{ url_for('checkout') }}">Checkout</a></li> <li><a href="{{ url_for('view_orders') }}">View Orders</a></li>  #}
 
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
             <li><a href="{{ url_for('delete_account') }}">Delete Account</a></li>
         {% else %}
             <li><a href="{{ url_for('login') }}">Login</a></li>
