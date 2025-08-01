@@ -3,4 +3,4 @@ Sign up
 Login
 Logout
 Delete
-(https://github.com/StevenMunich/Login/blob/master/Diagrams/myStoreSQL.jpg?raw=true)
+[https://github.com/StevenMunich/Login/blob/master/Diagrams/myStoreSQL.jpg?raw=true]
