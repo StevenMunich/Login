@@ -1,4 +1,5 @@
 Basic template login system for ecommerce and other platforms. Password is hashed but not salted. 
+Uses SQL Lite - You need to change that to a proper server database unless you want it on the client only.
 Sign up 
 Login
 Logout
